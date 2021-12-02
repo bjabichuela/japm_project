@@ -1,11 +1,68 @@
-{% extends 'admin/base.html' %}
-{% load static %}
+{% extends 'admin/base.html' %} {% load static %} {% block branding %}
+<h1 id="head">
+  <img
+    src="{% static 'img/logo.png' %}"
+    alt="BT Real Estate"
+    height="50"
+    width="80"
+    class="brand_img"
+  />
+  Admin Area
+</h1>
+{% endblock %} {% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}" />
+<style>
+  /* VARIABLE DEFINITIONS */
+  :root {
+    --primary: #79aec8;
+    --secondary: #417690;
+    --accent: #f5dd5d;
+    --primary-fg: #fff;
 
-{% block branding %}
-  <h1 id="head">
-    <img src="{% static 'img/logo.png' %}" alt="BT Real Estate" height="50" width="80" class="brand_img"> Admin Area
-  </h1>
-{% endblock %}
-{% block extrahead %}
-  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    --body-fg: #333;
+    --body-bg: #F3F5F9;
+    --body-quiet-color: #666;
+    --body-loud-color: #000;
+
+    --header-color: #ffc;
+    --header-branding-color: var(--accent);
+    --header-bg: var(--secondary);
+    --header-link-color: var(--primary-fg);
+
+    --breadcrumbs-fg: #4E4F50;
+    --breadcrumbs-link-fg: var(--body-fg);
+    --breadcrumbs-bg: var(--primary);
+
+    --link-fg: #447e9b;
+    --link-hover-color: #036;
+    --link-selected-fg: #5b80b2;
+
+    --hairline-color: #E2DED0;
+    --border-color: #4E4F50;
+
+    --error-fg: #ba2121;
+
+    --message-success-bg: #dfd;
+    --message-warning-bg: #ffc;
+    --message-error-bg: #ffefef;
+
+    --darkened-bg: #B7CFDC; /* A bit darker than --body-bg */
+    --selected-bg: #8D9797; /* E.g. selected table cells */
+    --selected-row: #ffc;
+
+    --button-fg: #fff;
+    --button-bg: var(--primary);
+    --button-hover-bg: #609ab6;
+    --default-button-bg: var(--secondary);
+    --default-button-hover-bg: #205067;
+    --close-button-bg: #888; /* Previously #bbb, contrast 1.92 */
+    --close-button-hover-bg: #747474;
+    --delete-button-bg: #ba2121;
+    --delete-button-hover-bg: #a41515;
+
+    --object-tools-fg: var(--button-fg);
+    --object-tools-bg: var(--close-button-bg);
+    --object-tools-hover-bg: var(--close-button-hover-bg);
+  }
+</style>
 {% endblock %}
