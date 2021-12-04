@@ -1,6 +1,17 @@
+{% load static %}
 <!-- Footer -->
-<footer id="main-footer" class="py-4 bg-primary text-white text-center">
-  Copyright &copy;
-  <span class="year"></span>
-  John Abichuela Property Management
+<footer id="main-footer" class="py-5 bg-dark text-white text-center">
+  <div>
+    <a class="text-white" href="{% url 'index' %}">
+      <img src="{% static 'img/logo2.png' %}" class="logo" alt="" /><br>
+      Go to Top
+    </a>
+    <br>
+  </div>
+  <div class="pt-4">
+    <p>
+      Copyright &copy;
+    <span class="year"></span>  | Created by John Abichuela 
+    </p>
+  </div>
 </footer>

@@ -5,8 +5,7 @@
       <div class="col-md-12">
         <h1 class="display-4">JA Property Management</h1>
         <p class="lead">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
-          pariatur!
+          "Best properties for best people."
         </p>
       </div>
     </div>
@@ -18,7 +17,7 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
+        <li class="breadcrumb-item text-dark">
           <a href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
         </li>
         <li class="breadcrumb-item active">About</li>
@@ -31,7 +30,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h2>We Search For The Perfect Home</h2>
+        <h2>We Search For The Perfect Property</h2>
         <p class="lead">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
           pariatur!
@@ -45,21 +44,20 @@
           laborum molestias quia.
         </p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 pt-5 mt-5">
         {% if mvp_realtors %}
           {% for realtor in mvp_realtors %}
-          <div class="card">
+          <div class="card text-center">
             <img
               class="card-img-top"
               src="{{ realtor.photo.url }}"
               alt="Seller of the month"
             />
             <div class="card-body">
-              <h5 class="card-title">Seller Of The Month</h5>
-              <h6 class="text-secondary">{{ realtor.name }}</h6>
+              <h6 class="card-title">Realtor Of The Month</h6>
+              <h3 class="text-dark pb-2">{{ realtor.name }}</h3>
               <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nesciunt amet, illo itaque similique repellat. content.
+                {{ realtor.description }}
               </p>
             </div>
           </div>
@@ -72,33 +70,32 @@
 
 <!-- Work -->
 <section id="work" class="bg-dark text-white text-center">
-  <h2 class="display-4">We Work For You</h2>
-  <h4>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem velit
-    aperiam, unde aliquid at similique!
-  </h4>
+  <h2 class="display-4 mb-4">We are here to help.</h2>
+  <h5 class="px-5">
+    We are committed to deliver the best experience. Whether you are looking to sell your property or purchase your next investment, we are here to assist you.
+  </h5>
   <hr />
-  <a href="listings.html" class="btn btn-secondary text-white btn-lg"
-    >View Our Featured Listings</a
+  <a href="{% url 'listings' %}" class="btn btn-secondary text-white btn-lg"
+    >Featured Properties</a
   >
 </section>
 
 <!-- Team -->
 <section id="team" class="py-5">
   <div class="container">
-    <h2 class="text-center">Our Team</h2>
+    <h2 class="text-center mb-5">Our Team</h2>
     <div class="row text-center">
       {% if realtors %}
         {% for realtor in realtors %}
-        <div class="col-md-4">
+        <div class="col-md-3 mb-5">
           <img
             src="{{ realtor.photo.url }}"
             alt=""
             class="rounded-circle mb-3"
           />
           <h4>{{ realtor.name }}</h4>
-          <p class="text-success">
-            <i class="fas fa-award text-success mb-3"></i> Realtor
+          <p class="text-dark">
+            <i class="fas fa-award text-dark mb-1"></i> Realtor
           </p>
           <hr />
           <p><i class="fas fa-phone"></i> {{ realtor.phone }}</p>
@@ -113,4 +110,8 @@
     </div>
   </div>
 </section>
+
+<div class="disclaimer text-center px-5">
+  <p>***This website is for demo purposes only.***</p>
+</div>
 {% endblock %}

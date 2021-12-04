@@ -948,7 +948,7 @@ table#change-history tbody th {
   float: right;
   width: 260px;
   position: relative;
-  margin-right: -300px;
+  margin-right: 0;
 }
 
 #footer {
@@ -996,12 +996,12 @@ table#change-history tbody th {
 
 #header a:link,
 #header a:visited {
-  color: var(--header-link-color);
+  color: #ffefef;
 }
 
 #header a:focus,
 #header a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #branding {

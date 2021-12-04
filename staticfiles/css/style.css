@@ -7,35 +7,31 @@ img {
 }
 
 .logo {
-  height: 50px;
-  width: 60px;
-  margin-right: 10rem;
+  height: 60px;
+  width: 70px;
 }
 
 .navbar {
   color: #fff;
   text-transform: uppercase;
-  height: 70px;
-}
-
-.collapse ul {
-  margin-left: 5rem;
+  height: 80px;
 }
 
 .social a {
   margin-right: 0.5rem;
   color: #fefefe;
-  letter-spacing: 0.6rem;
 }
 
+
 #top-bar {
-  background-color: #000401;
+  background-color: #030303;
   color: #fff;
-  opacity: 0.9;
+  bottom: 0;
+  padding-top: 1rem;
 }
 
 #showcase {
-  background: url("../img/showcase.jpg") no-repeat fixed center top/cover;
+  background: url("../img/showcase_banner.jpg") no-repeat fixed center top/cover;
   position: relative;
   min-height: 650px;
   color: #fff;
@@ -58,7 +54,7 @@ img {
 
 #services {
   background: url("../img/building.jpg") no-repeat top center fixed;
-  min-height: 300px;
+  min-height: 350px;
   position: relative;
   overflow: hidden;
 }
@@ -69,7 +65,7 @@ img {
   left: 0;
   min-height: 100%;
   width: 100%;
-  background: rgba(71, 175, 189, 0.479);
+  background: rgba(82, 83, 83, 0.555);
 }
 
 #showcase-inner {
@@ -97,6 +93,11 @@ img {
 
 .listing-preview a {
   position: relative;
+}
+
+.disclaimer {
+  font-style: italic;
+  font-size: 15px;
 }
 
 @media (max-width: 991px) {
