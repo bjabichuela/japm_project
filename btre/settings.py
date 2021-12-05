@@ -138,3 +138,8 @@ MESSAGE_TAGS = {
 # EMAIL_HOST_USER = 'inquiry@japroperties.com'
 # EMAIL_HOST_PASSWORD = '(Enter the password)'
 # EMAIL_USE_TLS = True
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
