@@ -1002,6 +1002,7 @@ table#change-history tbody th {
 #header a:focus,
 #header a:hover {
   text-decoration: none;
+  color: #ffefef;
 }
 
 #branding {

@@ -2,6 +2,8 @@
 
 {% load humanize %}
 
+{% block title %} | {{ listing.title }} {% endblock %}
+
 {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
@@ -31,6 +33,9 @@
       </nav>
     </div>
   </section>
+
+  <!-- Alerts -->
+  {% include 'partials/_alerts.html' %}
 
   <!-- Listing -->
   <section id="listing" class="py-4">
@@ -91,7 +96,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item text-dark">
                   <i class="fas fa-money-bill-alt"></i> Asking Price:
-                  <span class="float-right">${{ listing.price | intcomma }}</span>
+                  <span class="float-right">Php. {{ listing.price | intcomma }}</span>
                 </li>
                 <li class="list-group-item text-dark">
                   <i class="fas fa-bed"></i> Bedrooms:
@@ -124,7 +129,7 @@
                   <span class="float-right">{{ listing.list_date }}</span>
                 </li>
                 <li class="list-group-item text-dark">
-                  <i class="fas fa-bed"></i> Realtor:
+                  <i class="far fa-id-badge"></i> Realtor:
                   <span class="float-right">{{ listing.realtor }}
                   </span>
                 </li>
@@ -144,10 +149,13 @@
             <img class="card-img-top" src="{{ listing.realtor.photo.url }}" alt="">
             <div class="card-body">
               <h5 class="card-title">Property Realtor</h5>
-              <h6 class="text-dark"><i class="fas fa-user-circle"></i>  {{ listing.realtor }}</h6>
+              <h6 class="text-dark"><i class="far fa-id-badge"></i>  {{ listing.realtor }}</h6>
             </div>
           </div>
-          <button class="btn-dark btn-block md-4" data-toggle="modal" data-target="#inquiryModal">Make An Inquiry</button>
+          <button class="btn-dark btn-block md-4" data-toggle="modal" data-target="#inquiryModal">
+            <i class="far fa-envelope"></i>
+            Inquire
+          </button>
         </div>
       </div>
     </div>
@@ -164,18 +172,32 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+              <input type="hidden" name="user_id" value="{{ user.id }}">
+            {% else %}
+              <input type="hidden" name="user_id" value="0">
+            {% endif %}
+            <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
+            <input type="hidden" name="listing_id" value="{{ listing.id }}">
             <div class="form-group">
               <label for="property_name" class="col-form-label">Property:</label>
-              <input type="text" name="listing" class="form-control" value="45 Drivewood Cirlce" disabled>
+              <input type="text" name="listing" class="form-control" value="{{ listing.title }}">
             </div>
             <div class="form-group">
               <label for="name" class="col-form-label">Name:</label>
-              <input type="text" name="name" class="form-control" required>
+              <input type="text" name="name" class="form-control" 
+              {% if user.is_authenticated %} 
+                value="{{ user.first_name }} {{ user.last_name }}" 
+              {% endif %} required>
             </div>
             <div class="form-group">
               <label for="email" class="col-form-label">Email:</label>
-              <input type="email" name="email" class="form-control" required>
+              <input type="email" name="email" class="form-control" 
+              {% if user.is_authenticated %} 
+                value="{{ user.email }}" 
+              {% endif %} required>
             </div>
             <div class="form-group">
               <label for="phone" class="col-form-label">Phone:</label>

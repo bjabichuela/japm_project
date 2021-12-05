@@ -2,6 +2,8 @@
 
 {% load humanize %}
 
+{% block title %} | Welcome{% endblock %}
+
 {% block content %}
 <!-- Showcase -->
 <section id="showcase">
@@ -14,7 +16,7 @@
             <!-- Form Row 1 -->
             <div class="form-row">
               <div class="col-md-6 mb-1">
-                <label>Keywords</label>
+                <label class="search">Keywords</label>
                 <input
                   type="text"
                   name="keywords"
@@ -23,7 +25,7 @@
                 />
               </div>
               <div class="col-md-6 mb-1">
-                <label>City</label>
+                <label class="search">City</label>
                 <select name="city" class="form-control">
                   <option selected="true" disabled="disabled">
                     Any
@@ -34,7 +36,7 @@
                 </select>
               </div>
               <div class="col-md-6 mb-1">
-                <label>Bedrooms</label>
+                <label class="search">Bedrooms</label>
                 <select name="bedrooms" class="form-control">
                   <option selected="true" disabled="disabled">
                     Any
@@ -45,7 +47,7 @@
                 </select>
               </div>
               <div class="col-md-6 mb-1">
-                <label>Price</label>
+                <label class="search">Price</label>
                 <select name="price" class="form-control" id="type">
                   <option selected="true" disabled="disabled">
                     Any
@@ -66,8 +68,11 @@
   </div>
 </section>
 
+<!-- Alerts -->
+{% include 'partials/_alerts.html' %}
+
 <!-- Listings -->
-<section id="listings" class="py-4">
+<section id="listings" class="py-5">
   <div class="container">
     <h1 class="text-center mb-5">Featured Properties</h1>
     <div class="row">

@@ -23,7 +23,7 @@
   --success: #20c997;
   --info: #17a2b8;
   --warning: #ffc107;
-  --danger: #e94646;
+  --danger: #E57F84;
   --light: #f8f9fa;
   --dark: #030303;
   --breakpoint-xs: 0;
@@ -197,8 +197,15 @@ caption {
 th {
   text-align: inherit; }
 
-label {
+label .search {
   color: #fefefe;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: -webkit-baseline-middle; }
+
+
+label .account {
+  color: #030303;
   display: inline-block;
   line-height: 1;
   vertical-align: -webkit-baseline-middle; }
@@ -1355,7 +1362,7 @@ textarea.form-control {
   height: auto; }
 
 .form-group {
-  margin-bottom: 1rem; }
+  margin-bottom: 0.7rem; }
 
 .form-text {
   display: block;
@@ -3525,10 +3532,10 @@ input[type="button"].btn-block {
 
 .alert-danger {
   color: #792424;
-  background-color: #fbdada;
-  border-color: #f9cbcb; }
+  background-color: #E57F84;
+  border-color: #E57F84; }
   .alert-danger hr {
-    border-top-color: #f6b4b4; }
+    border-top-color: #E57F84; }
   .alert-danger .alert-link {
     color: #521818; }
 

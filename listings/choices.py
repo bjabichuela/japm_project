@@ -25,10 +25,10 @@ price_choices = {
 }
 
 state_choices = {
-        'Baguio': 'Baguio',
         'Antipolo': 'Antipolo',
+        'Baguio': 'Baguio',
         'BGC': 'BGC',
-        'Paranaque': 'Paranaque',
         'Cebu City': 'Cebu City',
         'Dasmarinas': 'Dasmarinas',
+        'Paranaque': 'Paranaque',
 }

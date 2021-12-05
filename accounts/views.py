@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-# from contacts.models import Contact
+from contacts.models import Contact
 
 def register(request):
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def register(request):
                     messages.error(request, 'That email is being used')
                     return redirect('register')
                 else:
-                    # Looks good
+                    # If all is good
                     user = User.objects.create_user(username=username, password=password,email=email, first_name=first_name, last_name=last_name)
                     # Login after register
                     # auth.login(request, user)
@@ -66,9 +66,9 @@ def logout(request):
 
 
 def dashboard(request):
-#   user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+  user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
 
-#   context = {
-#     'contacts': user_contacts
-#   }
+  context = {
+    'contacts': user_contacts
+  }
   return render(request, 'accounts/dashboard.html')
