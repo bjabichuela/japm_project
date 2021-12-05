@@ -132,11 +132,11 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-# Email config
+# Email config (Data's are not real)
 # EMAIL_HOST = 'smtp.japroperties.com'
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'inquiry@japroperties.com'
-# EMAIL_HOST_PASSWORD = '(Enter the password)'
+# EMAIL_HOST_PASSWORD = '1234'
 # EMAIL_USE_TLS = True
 
 try:
