@@ -1,0 +1,46 @@
+#header{
+    height: 50px;
+    background: #0B0909;
+    color: #ffff;
+}
+ 
+#branding h1 {
+    color: #fefefe;
+ 
+}
+ 
+a:link,
+a:visited {
+    color:  #44444C;
+}
+
+a:hover{
+    color: #fefefe;
+}
+ 
+div.breadcrumbs {
+    background: #8C8C8C;
+    color: #0B0909;
+}
+ 
+div.breadcrumbs a {
+    color: #44444C;
+}
+
+#nav-sidebar {
+    margin-top: 4rem;
+}
+
+#recent-actions-module {
+    padding-left: 2rem;
+}
+
+.module h2, .module caption, .inline-group h2{
+    background: #030303;
+ 
+}
+ 
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #0B0909;
+    color: #fff;
+}
