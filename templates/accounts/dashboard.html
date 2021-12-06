@@ -42,7 +42,7 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">Property ID#</th>
                   <th scope="col">Property</th>
                   <th></th>
                 </tr>
@@ -53,7 +53,7 @@
                     <td>{{ contact.id }}</td>
                     <td>{{ contact.listing }}</td>
                     <td>
-                      <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">View Listing</a>
+                      <a class="btn btn-dark" href="{% url 'listing' contact.listing_id %}">View Listing</a>
                     </td>
                   </tr>
                 {% endfor %}
