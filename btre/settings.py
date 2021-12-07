@@ -72,8 +72,8 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'realestate',
-        'USER': 'postgres',
+        'NAME': 'japm_prod',
+        'USER': 'dbadmin',
         'PASSWORD': '8435',
         'HOST': 'localhost'
     }
