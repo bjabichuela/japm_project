@@ -27,7 +27,9 @@ img {
   background-color: #030303;
   color: #fff;
   bottom: 0;
+  margin: 0;
   padding-top: 1rem;
+  overflow-x: hidden;
 }
 
 #showcase {
@@ -50,6 +52,10 @@ img {
   min-height: 400px;
   width: 100%;
   background: rgba(82, 83, 83, 0.555);
+}
+
+#listings {
+  margin: 0;
 }
 
 #services {
@@ -98,6 +104,9 @@ img {
 .disclaimer {
   font-style: italic;
   font-size: 15px;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 991px) {
